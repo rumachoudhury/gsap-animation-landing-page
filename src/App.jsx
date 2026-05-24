@@ -256,6 +256,59 @@ export default function App() {
         </div>
       </section>
 
+      {/* =================== Trust ===================*/}
+
+      <section className="py-16 px-6 text-center border-y border-white/10">
+        <p className="text-gray-500 mb-8">
+          Trusted by teams from leading companies
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-10 text-gray-400 text-lg">
+          <span>Google</span>
+          <span>Microsoft</span>
+          <span>Amazon</span>
+          <span>Stripe</span>
+          <span>Notion</span>
+        </div>
+      </section>
+
+      {/* ================================================== */}
+
+      <section className="py-24 px-6">
+        <div className="text-center mb-16">
+          <p className="text-cyan-400 font-medium mb-3">HOW IT WORKS</p>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Simple 3-step workflow
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+            <div className="text-3xl font-bold text-cyan-400 mb-4">01</div>
+            <h3 className="text-xl font-semibold mb-3">Create Project</h3>
+            <p className="text-gray-400">
+              Start by creating a workspace and adding your team.
+            </p>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+            <div className="text-3xl font-bold text-cyan-400 mb-4">02</div>
+            <h3 className="text-xl font-semibold mb-3">Assign Tasks</h3>
+            <p className="text-gray-400">
+              Organize tasks, set deadlines, and track progress.
+            </p>
+          </div>
+
+          <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+            <div className="text-3xl font-bold text-cyan-400 mb-4">03</div>
+            <h3 className="text-xl font-semibold mb-3">Collaborate</h3>
+            <p className="text-gray-400">
+              Work together in real time and complete projects faster.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ================= FEATURES ================= */}
       <section id="features" className="py-8 px-6">
         <div className="max-w-7xl mx-auto">
