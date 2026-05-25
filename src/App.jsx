@@ -2,16 +2,17 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Activity, ShieldCheck, Star, Zap } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
+import Hero from "./component/Hero";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   const navRef = useRef(null);
 
-  const heroRef = useRef(null);
-  const titleRef = useRef(null);
-  const descRef = useRef(null);
-  const btnRef = useRef(null);
+  // const heroRef = useRef(null);
+  // const titleRef = useRef(null);
+  // const descRef = useRef(null);
+  // const btnRef = useRef(null);
 
   const featureRef = useRef(null);
   const statsRef = useRef(null);
@@ -79,37 +80,37 @@ export default function App() {
 
     const ctx = gsap.context(() => {
       // ================= HERO =================
-      const tl = gsap.timeline();
+      // const tl = gsap.timeline();
 
-      tl.from(titleRef.current, {
-        y: 80,
-        opacity: 0,
-        duration: 1,
-        ease: "power4.out",
-      })
-        .from(
-          descRef.current,
-          {
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-          },
-          "-=0.5",
-        )
-        .fromTo(
-          btnRef.current,
-          {
-            scale: 0.8,
-            opacity: 0,
-          },
-          {
-            scale: 1,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.3",
-        );
+      // tl.from(titleRef.current, {
+      //   y: 80,
+      //   opacity: 0,
+      //   duration: 1,
+      //   ease: "power4.out",
+      // })
+      //   .from(
+      //     descRef.current,
+      //     {
+      //       y: 40,
+      //       opacity: 0,
+      //       duration: 0.8,
+      //     },
+      //     "-=0.5",
+      //   )
+      //   .fromTo(
+      //     btnRef.current,
+      //     {
+      //       scale: 0.8,
+      //       opacity: 0,
+      //     },
+      //     {
+      //       scale: 1,
+      //       opacity: 1,
+      //       duration: 0.8,
+      //       ease: "power3.out",
+      //     },
+      //     "-=0.3",
+      //   );
 
       // ================= FEATURES =================
       gsap.fromTo(
@@ -216,7 +217,7 @@ export default function App() {
       </nav>
 
       {/* ================= HERO ================= */}
-      <section
+      {/* <section
         ref={heroRef}
         className="min-h-screen flex items-center justify-center px-6"
       >
@@ -254,9 +255,11 @@ export default function App() {
             </button>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* =================== Trust ===================*/}
+      <Hero />
+
+      {/*=================== Trust ===================*/}
 
       <section className="py-16 px-6 text-center border-y border-white/10">
         <p className="text-gray-500 mb-8">
@@ -272,9 +275,9 @@ export default function App() {
         </div>
       </section>
 
-      {/* ================================================== */}
+      {/*============= Simple 3-step workflow ===========*/}
 
-      <section className="py-24 px-6">
+      {/* <section className="py-24 px-6">
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-3">HOW IT WORKS</p>
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -307,17 +310,13 @@ export default function App() {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ================= FEATURES ================= */}
       <section id="features" className="py-8 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-cyan-400 font-medium mb-3">FEATURES</p>
-
-            {/* <p className="inline-flex items-center text-xs tracking-widest text-cyan-300 font-semibold mb-3 border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 rounded-full">
-              FEATURES
-            </p> */}
 
             <h2 className="text-4xl md:text-5xl font-bold">
               Everything your team needs
@@ -326,7 +325,6 @@ export default function App() {
 
           <div ref={featureRef} className="grid md:grid-cols-3 gap-8">
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-400/30 transition">
-              {/* <Zap className="w-12 h-12 text-cyan-400 mb-6" /> */}
               <Zap className="w-12 h-12 text-cyan-400 mb-6 transition-transform duration-300 hover:scale-110" />
 
               <h3 className="text-2xl font-semibold mb-4">
@@ -340,7 +338,6 @@ export default function App() {
             </div>
 
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-cyan-400/30 transition">
-              {/* <Activity className="w-12 h-12 text-cyan-400 mb-6" /> */}
               <Activity className="w-12 h-12 text-cyan-400 mb-6 transition-transform duration-300 hover:scale-110" />
 
               <h3 className="text-2xl font-semibold mb-4">
@@ -457,7 +454,11 @@ export default function App() {
               and collaborate better.
             </p>
 
-            <button className="mt-10 px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
+            <button
+              // className="mt-10 px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+
+              className="mt-10 px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition shadow-lg shadow-cyan-500/30"
+            >
               Get Started Free
             </button>
           </div>
@@ -471,375 +472,3 @@ export default function App() {
     </div>
   );
 }
-// -------------
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { useLayoutEffect, useRef } from "react";
-
-// gsap.registerPlugin(ScrollTrigger);
-
-// export default function App() {
-//   const navRef = useRef(null);
-
-//   const heroRef = useRef(null);
-//   const titleRef = useRef(null);
-//   const descRef = useRef(null);
-//   const btnRef = useRef(null);
-
-//   const featureRef = useRef(null);
-//   const statsRef = useRef(null);
-//   const testimonialRef = useRef(null);
-//   const ctaRef = useRef(null);
-
-//   useLayoutEffect(() => {
-//     let lastScrollY = window.scrollY;
-
-//     const handleScroll = () => {
-//       const currentY = window.scrollY;
-
-//       if (currentY > lastScrollY) {
-//         gsap.to(navRef.current, {
-//           y: -100,
-//           duration: 0.4,
-//           ease: "power3.out",
-//         });
-//       } else {
-//         gsap.to(navRef.current, {
-//           y: 0,
-//           duration: 0.4,
-//           ease: "power3.out",
-//         });
-//       }
-
-//       lastScrollY = currentY;
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     const ctx = gsap.context(() => {
-//       // ================= HERO =================
-//       const tl = gsap.timeline();
-
-//       tl.from(titleRef.current, {
-//         y: 80,
-//         opacity: 0,
-//         duration: 1,
-//         ease: "power4.out",
-//       })
-//         .from(
-//           descRef.current,
-//           {
-//             y: 40,
-//             opacity: 0,
-//             duration: 0.8,
-//           },
-//           "-=0.5",
-//         )
-//         .fromTo(
-//           btnRef.current,
-//           {
-//             scale: 0.8,
-//             opacity: 0,
-//           },
-//           {
-//             scale: 1,
-//             opacity: 1,
-//             duration: 0.8,
-//             ease: "power3.out",
-//           },
-//           "-=0.3",
-//         );
-
-//       // ================= FEATURES =================
-//       gsap.fromTo(
-//         featureRef.current.children,
-//         {
-//           y: 80,
-//           opacity: 0,
-//         },
-//         {
-//           y: 0,
-//           opacity: 1,
-//           stagger: 0.2,
-//           duration: 1,
-//           ease: "power3.out",
-//           scrollTrigger: {
-//             trigger: featureRef.current,
-//             start: "top 85%",
-//           },
-//         },
-//       );
-
-//       // ================= STATS =================
-//       gsap.from(statsRef.current.children, {
-//         y: 50,
-//         opacity: 0,
-//         stagger: 0.2,
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: statsRef.current,
-//           start: "top 85%",
-//         },
-//       });
-
-//       // ================= TESTIMONIALS =================
-//       gsap.fromTo(
-//         testimonialRef.current.children,
-//         {
-//           scale: 0.9,
-//           opacity: 0,
-//         },
-//         {
-//           scale: 1,
-//           opacity: 1,
-//           stagger: 0.2,
-//           duration: 1,
-//           scrollTrigger: {
-//             trigger: testimonialRef.current,
-//             start: "top 85%",
-//           },
-//         },
-//       );
-
-//       // ================= CTA =================
-//       gsap.from(ctaRef.current, {
-//         y: 50,
-//         opacity: 0,
-//         duration: 1,
-//         scrollTrigger: {
-//           trigger: ctaRef.current,
-//           start: "top 85%",
-//         },
-//       });
-//     });
-
-//     return () => {
-//       ctx.revert();
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="bg-[#050816] text-white overflow-hidden">
-//       {/* ================= NAVBAR ================= */}
-//       <nav
-//         ref={navRef}
-//         className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl"
-//       >
-//         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-//           <h1 className="text-2xl font-bold tracking-wide">FlowSpace</h1>
-
-//           <div className="hidden md:flex items-center gap-8 text-gray-300">
-//             <a href="#features" className="hover:text-white transition">
-//               Features
-//             </a>
-
-//             <a href="#stats" className="hover:text-white transition">
-//               Stats
-//             </a>
-
-//             <a href="#testimonials" className="hover:text-white transition">
-//               Reviews
-//             </a>
-
-//             <button className="px-5 py-2 rounded-full bg-white text-black font-semibold">
-//               Start Free
-//             </button>
-//           </div>
-//         </div>
-//       </nav>
-
-//       {/* ================= HERO ================= */}
-//       <section
-//         ref={heroRef}
-//         className="min-h-screen flex items-center justify-center px-6"
-//       >
-//         <div className="max-w-5xl mx-auto text-center">
-//           <div className="inline-block px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
-//             Trusted by 10,000+ teams worldwide
-//           </div>
-
-//           <h1
-//             ref={titleRef}
-//             className="text-5xl md:text-7xl font-bold leading-tight"
-//           >
-//             Manage Projects Faster
-//             <span className="block text-cyan-400">with FlowSpace</span>
-//           </h1>
-
-//           <p
-//             ref={descRef}
-//             className="mt-8 text-lg text-gray-400 max-w-2xl mx-auto leading-8"
-//           >
-//             Streamline collaboration, organize tasks, and improve productivity
-//             with one modern workspace designed for fast-growing teams.
-//           </p>
-
-//           <div
-//             ref={btnRef}
-//             className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-//           >
-//             <button className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
-//               Start Free Trial
-//             </button>
-
-//             <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition">
-//               Watch Demo
-//             </button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= FEATURES ================= */}
-//       <section id="features" className="py-24 px-6">
-//         <div className="max-w-7xl mx-auto">
-//           <div className="text-center mb-16">
-//             <p className="text-cyan-400 font-medium mb-3">FEATURES</p>
-
-//             <h2 className="text-4xl md:text-5xl font-bold">
-//               Everything your team needs
-//             </h2>
-//           </div>
-
-//           <div ref={featureRef} className="grid md:grid-cols-3 gap-8">
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <div className="text-4xl mb-6">⚡</div>
-
-//               <h3 className="text-2xl font-semibold mb-4">
-//                 Real-time Collaboration
-//               </h3>
-
-//               <p className="text-gray-400 leading-7">
-//                 Work together instantly with shared tasks, live updates, and
-//                 seamless communication.
-//               </p>
-//             </div>
-
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <div className="text-4xl mb-6">📊</div>
-
-//               <h3 className="text-2xl font-semibold mb-4">Smart Analytics</h3>
-
-//               <p className="text-gray-400 leading-7">
-//                 Monitor project performance and track team productivity with
-//                 beautiful dashboards.
-//               </p>
-//             </div>
-
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <div className="text-4xl mb-6">🔒</div>
-
-//               <h3 className="text-2xl font-semibold mb-4">Secure Workspace</h3>
-
-//               <p className="text-gray-400 leading-7">
-//                 Enterprise-grade security keeps your data safe, protected, and
-//                 accessible anytime.
-//               </p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= STATS ================= */}
-//       <section id="stats" className="py-24 px-6">
-//         <div
-//           ref={statsRef}
-//           className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 text-center"
-//         >
-//           <div className="p-8 rounded-3xl bg-cyan-400 text-black">
-//             <h3 className="text-5xl font-bold">10K+</h3>
-//             <p className="mt-3 font-medium">Active Teams</p>
-//           </div>
-
-//           <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//             <h3 className="text-5xl font-bold">99.9%</h3>
-//             <p className="mt-3 text-gray-400">System Uptime</p>
-//           </div>
-
-//           <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//             <h3 className="text-5xl font-bold">4.9/5</h3>
-//             <p className="mt-3 text-gray-400">Customer Rating</p>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= TESTIMONIALS ================= */}
-//       <section id="testimonials" className="py-24 px-6">
-//         <div className="max-w-7xl mx-auto">
-//           <div className="text-center mb-16">
-//             <p className="text-cyan-400 font-medium mb-3">TESTIMONIALS</p>
-
-//             <h2 className="text-4xl md:text-5xl font-bold">
-//               Loved by modern teams
-//             </h2>
-//           </div>
-
-//           <div ref={testimonialRef} className="grid md:grid-cols-3 gap-8">
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <p className="text-gray-300 leading-7">
-//                 “FlowSpace completely transformed how our team manages projects
-//                 and deadlines.”
-//               </p>
-
-//               <div className="mt-6">
-//                 <h4 className="font-semibold">Sarah Johnson</h4>
-//                 <p className="text-gray-500 text-sm">Product Manager</p>
-//               </div>
-//             </div>
-
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <p className="text-gray-300 leading-7">
-//                 “The animations and UI feel incredibly smooth and professional.”
-//               </p>
-
-//               <div className="mt-6">
-//                 <h4 className="font-semibold">David Lee</h4>
-//                 <p className="text-gray-500 text-sm">Startup Founder</p>
-//               </div>
-//             </div>
-
-//             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-//               <p className="text-gray-300 leading-7">
-//                 “Our team productivity improved within the first week of using
-//                 FlowSpace.”
-//               </p>
-
-//               <div className="mt-6">
-//                 <h4 className="font-semibold">Emma Brown</h4>
-//                 <p className="text-gray-500 text-sm">Marketing Lead</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= CTA ================= */}
-//       <section className="py-24 px-6">
-//         <div
-//           ref={ctaRef}
-//           className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px]"
-//         >
-//           <div className="rounded-[40px] bg-[#0B1120] text-center px-8 py-20">
-//             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-//               Ready to simplify your workflow?
-//             </h2>
-
-//             <p className="mt-6 text-gray-400 max-w-2xl mx-auto">
-//               Join thousands of teams already using FlowSpace to manage projects
-//               and collaborate better.
-//             </p>
-
-//             <button className="mt-10 px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
-//               Get Started Free
-//             </button>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* ================= FOOTER ================= */}
-//       <footer className="border-t border-white/10 py-10 text-center text-gray-500">
-//         © 2026 FlowSpace. All rights reserved.
-//       </footer>
-//     </div>
-//   );
-// }
