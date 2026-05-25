@@ -14,6 +14,8 @@ export default function App() {
   // const descRef = useRef(null);
   // const btnRef = useRef(null);
 
+  const WorkflowRef = useRef(null); //create a ref for the workflow section
+
   const featureRef = useRef(null);
   const statsRef = useRef(null);
   const testimonialRef = useRef(null);
@@ -112,6 +114,22 @@ export default function App() {
       //     "-=0.3",
       //   );
 
+      //  ============= Simple 3-step workflow ==========
+
+      if (WorkflowRef.current) {
+        gsap.from(WorkflowRef.current.children, {
+          y: 80,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: WorkflowRef.current,
+            start: "top 80%",
+          },
+        });
+      }
+
       // ================= FEATURES =================
       gsap.fromTo(
         featureRef.current.children,
@@ -144,7 +162,7 @@ export default function App() {
         },
       });
 
-      // ================= TESTIMONIALS =================
+      // ================= TESTIMONIALS ===============
       gsap.fromTo(
         testimonialRef.current.children,
         {
@@ -285,7 +303,10 @@ export default function App() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div
+          ref={WorkflowRef}
+          className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+        >
           <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
             <div className="text-3xl font-bold text-cyan-400 mb-4">01</div>
             <h3 className="text-xl font-semibold mb-3">Create Project</h3>
