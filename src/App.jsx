@@ -277,7 +277,7 @@ export default function App() {
 
       {/*============= Simple 3-step workflow ===========*/}
 
-      {/* <section className="py-24 px-6">
+      <section className="py-24 px-6">
         <div className="text-center mb-16">
           <p className="text-cyan-400 font-medium mb-3">HOW IT WORKS</p>
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -310,7 +310,7 @@ export default function App() {
             </p>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* ================= FEATURES ================= */}
       <section id="features" className="py-8 px-6">
