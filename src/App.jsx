@@ -19,7 +19,7 @@ export default function App() {
   // const descRef = useRef(null);
   // const btnRef = useRef(null);
 
-  const WorkflowRef = useRef(null); //create a ref for the workflow section
+  const workflowRef = useRef(null); //create a ref for the workflow section
 
   const featureRef = useRef(null);
   const statsRef = useRef(null);
@@ -132,15 +132,15 @@ export default function App() {
 
       //  ============= Simple 3-step workflow ==========
 
-      if (WorkflowRef.current) {
-        gsap.from(WorkflowRef.current.children, {
+      if (workflowRef.current) {
+        gsap.from(workflowRef.current.children, {
           y: 80,
           opacity: 0,
           stagger: 0.2,
           duration: 1,
           ease: "power3.out",
           scrollTrigger: {
-            trigger: WorkflowRef.current,
+            trigger: workflowRef.current,
             start: "top 80%",
           },
         });
