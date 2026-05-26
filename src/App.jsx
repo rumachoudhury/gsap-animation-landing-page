@@ -11,6 +11,9 @@ export default function App() {
 
   const logoRef = useRef(null); //create a ref for the logo container in the trust section
 
+  const teamRef = useRef(null);
+  const contactRef = useRef(null);
+
   // const heroRef = useRef(null);
   // const titleRef = useRef(null);
   // const descRef = useRef(null);
@@ -195,6 +198,36 @@ export default function App() {
         },
       );
 
+      // ================= TEAM =================
+      if (teamRef.current) {
+        gsap.from(teamRef.current.children, {
+          y: 80,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: teamRef.current,
+            start: "top 80%",
+          },
+        });
+      }
+
+      // ================= CONTACT =================
+      if (contactRef.current) {
+        gsap.from(contactRef.current.children, {
+          y: 50,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: contactRef.current,
+            start: "top 85%",
+          },
+        });
+      }
+
       // ================= CTA =================
       gsap.from(ctaRef.current, {
         y: 50,
@@ -316,6 +349,7 @@ export default function App() {
           Trusted by teams from leading companies
         </p>
 
+        {/* SCROLL WRAPPER */}
         <div className="relative">
           <div ref={logoRef} className="flex gap-16 whitespace-nowrap">
             <span className="text-gray-300 text-xl">Google</span>
@@ -324,6 +358,7 @@ export default function App() {
             <span className="text-gray-300 text-xl">Stripe</span>
             <span className="text-gray-300 text-xl">Notion</span>
 
+            {/* duplicate for smooth loop */}
             <span className="text-gray-300 text-xl">Google</span>
             <span className="text-gray-300 text-xl">Microsoft</span>
             <span className="text-gray-300 text-xl">Amazon</span>
@@ -496,6 +531,94 @@ export default function App() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ================= TEAM ================= */}
+      <section className="py-24 px-6">
+        <div ref={teamRef} className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-cyan-400 font-medium mb-3">OUR TEAM</p>
+
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Meet the people behind FlowSpace
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <div className="w-24 h-24 rounded-full bg-cyan-400 mx-auto mb-6"></div>
+
+              <h3 className="text-2xl font-semibold">Sarah Johnson</h3>
+
+              <p className="text-cyan-400 mt-2">UI Designer</p>
+
+              <p className="text-gray-400 mt-4">
+                Creates beautiful and modern user experiences.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <div className="w-24 h-24 rounded-full bg-pink-400 mx-auto mb-6"></div>
+
+              <h3 className="text-2xl font-semibold">David Lee</h3>
+
+              <p className="text-cyan-400 mt-2">Frontend Developer</p>
+
+              <p className="text-gray-400 mt-4">
+                Builds smooth and interactive web applications.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10 text-center">
+              <div className="w-24 h-24 rounded-full bg-green-400 mx-auto mb-6"></div>
+
+              <h3 className="text-2xl font-semibold">Emma Brown</h3>
+
+              <p className="text-cyan-400 mt-2">Project Manager</p>
+
+              <p className="text-gray-400 mt-4">
+                Keeps projects organized and teams productive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CONTACT ================= */}
+      <section className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-cyan-400 font-medium mb-3">CONTACT</p>
+
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Get in touch with us
+            </h2>
+          </div>
+
+          <form ref={contactRef} className="space-y-6">
+            <input
+              type="text"
+              placeholder="Your Name"
+              className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Your Email"
+              className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Your Message"
+              className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
+            ></textarea>
+
+            <button className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
+              Send Message
+            </button>
+          </form>
         </div>
       </section>
 
