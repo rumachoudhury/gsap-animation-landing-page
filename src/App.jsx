@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   const navRef = useRef(null);
 
-  // const logoRef = useRef(null);
+  const logoRef = useRef(null); //create a ref for the logo container in the trust section
 
   // const heroRef = useRef(null);
   // const titleRef = useRef(null);
@@ -118,14 +118,14 @@ export default function App() {
 
       // ================  Trust =======================
 
-      // if (logoRef.current) {
-      //   gsap.to(logoRef.current, {
-      //     x: "-50%",
-      //     duration: 10,
-      //     repeat: -1,
-      //     ease: "linear",
-      //   });
-      // }
+      if (logoRef.current) {
+        gsap.to(logoRef.current, {
+          x: "-50%",
+          duration: 10,
+          repeat: -1,
+          ease: "linear",
+        });
+      }
 
       //  ============= Simple 3-step workflow ==========
 
@@ -291,22 +291,8 @@ export default function App() {
       <Hero />
 
       {/*=================== Trust ===================*/}
-
-      {/* <section className="py-16 px-6 text-center border-y border-white/10">
-        <p className="text-gray-500 mb-8">
-          Trusted by teams from leading companies
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-10 text-gray-400 text-lg">
-          <span>Google</span>
-          <span>Microsoft</span>
-          <span>Amazon</span>
-          <span>Stripe</span>
-          <span>Notion</span>
-        </div>
-      </section> */}
-
-      <section className="py-24 px-6">
+      {/* without animation */}
+      {/* <section className="py-24 px-6">
         <div className="max-w-5xl mx-auto rounded-[40px] bg-gradient-to-r from-cyan-500 to-blue-600 p-[1px]">
           <div className="rounded-[40px] bg-[#0B1120] text-center px-8 py-16">
             <p className="text-gray-400 mb-10">
@@ -322,14 +308,14 @@ export default function App() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* <section className="py-20 px-6 overflow-hidden border-y border-white/10">
+      {/* with animation */}
+      <section className="py-20 px-6 overflow-hidden border-y border-white/10">
         <p className="text-center text-gray-500 mb-10">
           Trusted by teams from leading companies
         </p>
 
-    
         <div className="relative">
           <div ref={logoRef} className="flex gap-16 whitespace-nowrap">
             <span className="text-gray-300 text-xl">Google</span>
@@ -338,7 +324,6 @@ export default function App() {
             <span className="text-gray-300 text-xl">Stripe</span>
             <span className="text-gray-300 text-xl">Notion</span>
 
-          
             <span className="text-gray-300 text-xl">Google</span>
             <span className="text-gray-300 text-xl">Microsoft</span>
             <span className="text-gray-300 text-xl">Amazon</span>
@@ -346,7 +331,7 @@ export default function App() {
             <span className="text-gray-300 text-xl">Notion</span>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/*============= Simple 3-step workflow ===========*/}
 
