@@ -199,8 +199,22 @@ export default function App() {
       );
 
       // ================= TEAM =================
+      // if (teamRef.current) {
+      //   gsap.from(teamRef.current.children, {
+      //     y: 80,
+      //     opacity: 0,
+      //     stagger: 0.2,
+      //     duration: 1,
+      //     ease: "power3.out",
+      //     scrollTrigger: {
+      //       trigger: teamRef.current,
+      //       start: "top 80%",
+      //     },
+      //   });
+      // }
+
       if (teamRef.current) {
-        gsap.from(teamRef.current.children, {
+        gsap.from(teamRef.current.querySelectorAll("div"), {
           y: 80,
           opacity: 0,
           stagger: 0.2,
@@ -214,18 +228,26 @@ export default function App() {
       }
 
       // ================= CONTACT =================
+
       if (contactRef.current) {
-        gsap.from(contactRef.current.children, {
-          y: 50,
-          opacity: 0,
-          stagger: 0.2,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: contactRef.current,
-            start: "top 85%",
+        gsap.fromTo(
+          contactRef.current.children,
+          {
+            y: 50,
+            opacity: 0,
           },
-        });
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: contactRef.current,
+              start: "top 85%",
+            },
+          },
+        );
       }
 
       // ================= CTA =================
@@ -379,7 +401,7 @@ export default function App() {
         </div>
 
         <div
-          ref={WorkflowRef}
+          ref={workflowRef}
           className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
