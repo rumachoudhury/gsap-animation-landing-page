@@ -578,6 +578,16 @@ export default function App() {
                 tasks, collaborate in real time, and improve productivity.
               </p>
             </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">
+                Is FlowSpace free to use?
+              </h3>
+              <p className="text-gray-400 leading-7">
+                Yes, we offer a free plan for individuals and small teams. You
+                can upgrade anytime for advanced features.
+              </p>
+            </div>
           </div>
         </div>
       </section>
