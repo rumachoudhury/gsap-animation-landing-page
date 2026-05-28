@@ -556,6 +556,19 @@ export default function App() {
         </div>
       </section>
 
+      {/* ================= FAQ ================= */}
+
+      <section id="faq" className="py-24 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div text-center mb-16>
+            <p className="text-cyan-400 font-medium mb-3">FAQ</p>
+            <h2 className="text-4xlmd-text-5xl font-bold">
+              Frequently Asked Question
+            </h2>
+          </div>
+        </div>
+      </section>
+
       {/* ================= TEAM ================= */}
       <section className="py-24 px-6">
         <div ref={teamRef} className="max-w-7xl mx-auto">
