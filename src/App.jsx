@@ -566,6 +566,19 @@ export default function App() {
               Frequently Asked Question
             </h2>
           </div>
+
+          <div className="space-y-6">
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">
+                What is FlowSpace used for?
+              </h3>
+              <p className="text-gray-400 leading-7">
+                {" "}
+                FlowSpace is a project management tool that helps teams organize
+                tasks, collaborate in real time, and improve productivity.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
