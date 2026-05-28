@@ -598,6 +598,14 @@ export default function App() {
                 enterprise teams.
               </p>
             </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">Is my data secure?</h3>
+              <p className="text-gray-400 leading-7">
+                Yes. We use enterprise-grade encryption and secure cloud
+                infrastructure to protect all your data.
+              </p>
+            </div>
           </div>
         </div>
       </section>
