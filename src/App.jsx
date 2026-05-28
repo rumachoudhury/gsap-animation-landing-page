@@ -588,6 +588,16 @@ export default function App() {
                 can upgrade anytime for advanced features.
               </p>
             </div>
+
+            <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">
+                Can I use it for my business team?
+              </h3>
+              <p className="text-gray-400 leading-7">
+                Absolutely. FlowSpace is built for startups, agencies, and
+                enterprise teams.
+              </p>
+            </div>
           </div>
         </div>
       </section>
