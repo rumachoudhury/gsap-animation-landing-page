@@ -11,9 +11,6 @@ export default function App() {
 
   const logoRef = useRef(null); //create a ref for the logo container in the trust section
 
-  const teamRef = useRef(null);
-  const contactRef = useRef(null);
-
   // const heroRef = useRef(null);
   // const titleRef = useRef(null);
   // const descRef = useRef(null);
@@ -24,6 +21,9 @@ export default function App() {
   const featureRef = useRef(null);
   const statsRef = useRef(null);
   const testimonialRef = useRef(null);
+  const faqRef = useRef(null);
+  const teamRef = useRef(null);
+  const contactRef = useRef(null);
   const ctaRef = useRef(null);
 
   // ================= TESTIMONIAL DATA =================
@@ -198,6 +198,20 @@ export default function App() {
         },
       );
 
+      // ================= FAQ =================
+      if (faqRef.current) {
+        gsap.from(faqRef.current.children, {
+          y: 60,
+          opacity: 0,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: faqRef.current,
+            start: "top 85%",
+          },
+        });
+      }
       // ================= TEAM =================
       // if (teamRef.current) {
       //   gsap.from(teamRef.current.children, {
@@ -560,20 +574,22 @@ export default function App() {
 
       <section id="faq" className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <div text-center mb-16>
+          {/* HEADER */}
+          <div className="text-center mb-16">
             <p className="text-cyan-400 font-medium mb-3">FAQ</p>
-            <h2 className="text-4xlmd-text-5xl font-bold">
-              Frequently Asked Question
+
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Frequently Asked Questions
             </h2>
           </div>
 
-          <div className="space-y-6">
+          {/* FAQ ITEMS */}
+          <div ref={faqRef} className="space-y-6">
             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
               <h3 className="text-xl font-semibold mb-3">
                 What is FlowSpace used for?
               </h3>
               <p className="text-gray-400 leading-7">
-                {" "}
                 FlowSpace is a project management tool that helps teams organize
                 tasks, collaborate in real time, and improve productivity.
               </p>
