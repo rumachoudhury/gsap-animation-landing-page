@@ -300,7 +300,7 @@ export default function App() {
             </a>
 
             <button className="px-5 py-2 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
-              Start Free
+              Start Free here
             </button>
           </div>
         </div>
