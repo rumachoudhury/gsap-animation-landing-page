@@ -15,11 +15,6 @@ export default function App() {
 
   const logoRef = useRef(null); //create a ref for the logo container in the trust section
 
-  // const heroRef = useRef(null);
-  // const titleRef = useRef(null);
-  // const descRef = useRef(null);
-  // const btnRef = useRef(null);
-
   const workflowRef = useRef(null); //create a ref for the workflow section
 
   const featureRef = useRef(null);
@@ -90,39 +85,6 @@ export default function App() {
     window.addEventListener("scroll", handleScroll);
 
     const ctx = gsap.context(() => {
-      // ================= HERO =================
-      // const tl = gsap.timeline();
-
-      // tl.from(titleRef.current, {
-      //   y: 80,
-      //   opacity: 0,
-      //   duration: 1,
-      //   ease: "power4.out",
-      // })
-      //   .from(
-      //     descRef.current,
-      //     {
-      //       y: 40,
-      //       opacity: 0,
-      //       duration: 0.8,
-      //     },
-      //     "-=0.5",
-      //   )
-      //   .fromTo(
-      //     btnRef.current,
-      //     {
-      //       scale: 0.8,
-      //       opacity: 0,
-      //     },
-      //     {
-      //       scale: 1,
-      //       opacity: 1,
-      //       duration: 0.8,
-      //       ease: "power3.out",
-      //     },
-      //     "-=0.3",
-      //   );
-
       // ================  Trust =======================
 
       if (logoRef.current) {
