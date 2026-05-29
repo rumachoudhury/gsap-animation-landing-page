@@ -2,11 +2,15 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Activity, ShieldCheck, Star, Zap } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
+import { useState } from "react";
 import Hero from "./component/Hero";
+import emailjs from "@emailjs/browser";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const [loading, setLoading] = useState(false);
+
   const navRef = useRef(null);
 
   const logoRef = useRef(null); //create a ref for the logo container in the trust section
@@ -281,6 +285,30 @@ export default function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        contactRef.current,
+        import.meta.env.VITE_PUBLIC_KEY,
+      )
+      .then(() => {
+        alert("Message sent!");
+        contactRef.current.reset();
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Failed to send message");
+        setLoading(false);
+      });
+  };
 
   return (
     <div className="bg-[#050816] text-white overflow-hidden">
@@ -688,27 +716,36 @@ export default function App() {
             </h2>
           </div>
 
-          <form ref={contactRef} className="space-y-6">
+          <form ref={contactRef} onSubmit={sendEmail} className="space-y-6">
             <input
               type="text"
+              name="name"
               placeholder="Your Name"
               className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
             />
 
             <input
               type="email"
+              name="email"
               placeholder="Your Email"
+              required
               className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
             />
 
             <textarea
               rows="5"
+              name="message"
               placeholder="Your Message"
+              required
               className="w-full p-4 rounded-2xl bg-white/5 border border-white/10 outline-none"
             ></textarea>
 
-            <button className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
-              Send Message
+            <button
+              type="submit"
+              disabled={loading}
+              className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition disabled:opacity-50"
+            >
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </form>
         </div>
