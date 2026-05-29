@@ -34,7 +34,6 @@ export default function Boxes() {
         <div className="box gradient-blue">Box 1</div>
         <div className="box gradient-blue">Box 2</div>
         <div className="box gradient-blue">Box 3</div>
-        <div className="box gradient-blue">Box 4</div>
       </section>
     </main>
   );
