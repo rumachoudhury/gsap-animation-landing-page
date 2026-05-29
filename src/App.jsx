@@ -306,47 +306,6 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ================= HERO ================= */}
-      {/* <section
-        ref={heroRef}
-        className="min-h-screen flex items-center justify-center px-6"
-      >
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="inline-block px-4 py-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 text-sm mb-8">
-            Trusted by 10,000+ teams worldwide
-          </div>
-
-          <h1
-            ref={titleRef}
-            className="text-5xl md:text-7xl font-bold leading-tight"
-          >
-            Manage Projects Faster
-            <span className="block text-cyan-400">with FlowSpace</span>
-          </h1>
-
-          <p
-            ref={descRef}
-            className="mt-8 text-lg text-gray-400 max-w-2xl mx-auto leading-8"
-          >
-            Streamline collaboration, organize tasks, and improve productivity
-            with one modern workspace designed for fast-growing teams.
-          </p>
-
-          <div
-            ref={btnRef}
-            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
-          >
-            <button className="px-8 py-4 rounded-full bg-cyan-400 text-black font-semibold hover:scale-105 transition">
-              Start Free Trial
-            </button>
-
-            <button className="px-8 py-4 rounded-full border border-white/20 hover:bg-white/10 transition">
-              Watch Demo
-            </button>
-          </div>
-        </div>
-      </section> */}
-
       <Hero />
 
       {/*=================== Trust ===================*/}
